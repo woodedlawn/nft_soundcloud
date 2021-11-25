@@ -39,19 +39,9 @@ contract SoundCloud is ERC721Full {
     //     return tokenOwner(requestor);
     // }
     
-    mapping(address => uint) tokenCreator;
-    
-    function tokenOwner() public view returns (uint) {
-        return tokenCreator[owner];
-    }
-    
-    
-}
-//"SoundCloud Token", "SCT"
-contract SC_Token is ERC721MetadataMintable {
-    constructor() public ERC721MetadataMintable() {}
-    
-    function awardToken(address artist, string memory tokenURI)
+    mapping(address => string) tokenArtist;
+
+     function awardToken(address artist, string memory tokenURI)
     public
     returns (uint256)
     {
@@ -61,4 +51,22 @@ contract SC_Token is ERC721MetadataMintable {
         
         return newTokenId;
     }
+    
+    
+    
 }
+//"SoundCloud Token", "SCT"
+// contract SC_Token is ERC721MetadataMintable {
+//     constructor() public ERC721MetadataMintable() {}
+    
+//     function awardToken(address artist, string memory tokenURI)
+//     public
+//     returns (uint256)
+//     {
+//         uint256 newTokenId;
+//         _mint(artist, newTokenId);
+//         _setTokenURI(newTokenId, tokenURI);
+        
+//         return newTokenId;
+//     }
+// }
