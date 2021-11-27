@@ -1,0 +1,93 @@
+{% with page_title=page_title %} {% include "header.html" %} {% endwith %}
+
+<div class="container">
+  <div class="jumbotron" style="text-align: center; margin-bottom: 30px">
+    <h1>{{page_config.title}}</h1>
+    <p>{{page_config.details}}</p>
+  </div>
+
+  <!-- <div class="row" style="margin-bottom: 30px">
+    <div class="col-md-12">
+      <h2>{{page_config.title}}</h2>
+      <div id="plot">{{page_config.details}}</div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3 mb-3">
+      <form
+        class="row g-3 needs-validation"
+        novalidate
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <legend style="text-align: center">
+          Upload your file and provide some metadata
+        </legend>
+        <div class="mb-3">
+          <label class="form-label" for="nft_file">Audio file</label>
+          <input
+            type="file"
+            name="nft_file"
+            class="form-control"
+            id="nft_file"
+            required
+          />
+          <div class="invalid-feedback">Select a file for upload.</div>
+        </div>
+        <div class="mb-3">
+          <label for="nft_name" class="form-label">Audio Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nft_name"
+            name="nft_name"
+            required
+          />
+          <div class="invalid-feedback">Enter a name for this audio.</div>
+        </div>
+        <div class="mb-3">
+          <label for="nft_description" class="form-label"
+            >Audio Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="nft_description"
+            name="nft_description"
+            required
+          />
+          <div class="invalid-feedback">Enter a description of this audio.</div>
+        </div>
+        <div class="mb-3">
+          <label for="nft_instrument" class="form-label"
+            >Instrument Recorded</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="nft_instrument"
+            name="nft_instrument"
+            required
+          />
+          <div class="invalid-feedback">Enter an instrument.</div>
+        </div>
+        <div class="mb-3">
+          <label for="nft_genre" class="form-label">Music Genre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nft_genre"
+            name="nft_genre"
+            required
+          />
+          <div class="invalid-feedback">Enter a music genre.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% with page_footer=page_footer %} {% include "footer.html" %} {% endwith %}

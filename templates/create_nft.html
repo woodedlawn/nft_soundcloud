@@ -1,0 +1,26 @@
+{% with page_title=page_title %} {% include "header.html" %} {% endwith %}
+
+<div class="container">
+  <div class="jumbotron" style="text-align: center">
+    <h1>{{page_config.title}}</h1>
+    <p>{{page_config.details}}</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="plot">Congratulations on generating your NFT!</div>
+      <div id="plot">
+        The tokenUri is {{page_config.token_ipfs_hash}}. The token metadata can
+        be viewed
+        <a href="{{page_config.token_ipfs_gateway_url}}" target="_blank">here</a
+        >.
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12"></div>
+  </div>
+</div>
+
+{% with page_footer=page_footer %} {% include "footer.html" %} {% endwith %}
