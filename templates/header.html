@@ -15,6 +15,12 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
+    <script>
+      window.soundChainContractAddress =
+        "{{ site_config.smart_contract_address }}";
+      window.soundChainContractAbiLocation =
+        "{{ site_config.smart_contract_abi }}";
+    </script>
   </head>
 
   <body>
