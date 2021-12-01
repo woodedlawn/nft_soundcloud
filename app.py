@@ -175,7 +175,7 @@ def discover():
 def about():
     page_config = {
         "title": "About",
-        "details": "Browse community music NFTs. Find some inspiration and bid on samples to include in yout project or propose a royalty agreement to the owner.",
+        "details": "Who we are, what we are doing, and why we are doing it...",
         "content": "Here we describe what we do in details",
     }
     return render_template("about.html", site_config=site_config, page_config=page_config)
