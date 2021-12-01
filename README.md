@@ -17,6 +17,8 @@ To run this app locally for development:
 
 [![](https://github.com/woodedlawn.png?size=50)](https://github.com/woodedlawn)
 
+[![](https://github.com/dylanbowsky.png?size=50)](https://github.com/dylanbowsky)
+
 ---
 
 ## License
