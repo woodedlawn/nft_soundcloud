@@ -49,4 +49,8 @@ contract SoundChain is ERC721Full {
             return sounds;
         }
     }
+
+    function getSound(uint256 tokenId) public view returns (Sound memory) {
+        return soundCollection[tokenId];
+    }
 }
