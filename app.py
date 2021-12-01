@@ -17,6 +17,7 @@ from flask import (
 from werkzeug.utils import secure_filename
 
 from pinata import pin_file_to_ipfs, pin_json_to_ipfs, convert_data_to_json
+from sounds import get_sounds
 
 #################################################
 # Flask Setup
@@ -30,11 +31,13 @@ if app.debug == True:
 
 
 image_file_hash = 'QmVMjWBk7ea2bdaMM6C8gT2C9ngfWtLXhFEXM5DTbmXmwQ'
+smart_contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
+smart_contract_abi = os.getenv("SMART_CONTRACT_ABI")
 
 site_config = {
-    "sitename": "NFT SoundChain",
+    "sitename": "NFT SoundCloud",
     "sitelogo": "/static/images/rawasy_logo.png",
-    "page_title": "NFT SoundChain",
+    "page_title": "NFT SoundCloud",
     "head_links": [
         {
             "active": "active",
@@ -52,8 +55,8 @@ site_config = {
             "link": "/about",
         }
     ],
-    "smart_contract_address": os.getenv("SMART_CONTRACT_ADDRESS"),
-    "smart_contract_abi": os.getenv("SMART_CONTRACT_ABI"),
+    "smart_contract_address": smart_contract_address,
+    "smart_contract_abi": smart_contract_abi,
 }
 page_config = {
 }
@@ -62,7 +65,7 @@ page_config = {
 @app.route("/")
 def home():
     page_config = {
-        "title": "NFT SoundChain",
+        "title": "NFT SoundCloud",
         "details": "A community for creating and sharing music NFTs",
         "content": "Here we describe what we do in details",
     }
@@ -143,7 +146,7 @@ def create_nft():
     }
 
     page_config = {
-        "title": "Create your NFT!",
+        "title": "Create your SoundChainToken NFT!",
         "details": "Create an NFT of your audio on the Ethereum blockchain!",
         "token_ipfs_hash": token_ipfs_hash,
         "token_ipfs_gateway_url": token_ipfs_gateway_url,
@@ -156,12 +159,26 @@ def create_nft():
 
 @app.route("/discover")
 def discover():
+    sounds = get_sounds()
+
     page_config = {
         "title": "Discover",
         "details": "Browse community music NFTs. Find some inspiration and bid on samples to include in yout project or propose a royalty agreement to the owner.",
         "content": "Here we describe what we do in details",
+        "sounds": sounds,
+        "len": len(sounds)
     }
     return render_template("discover.html", site_config=site_config, page_config=page_config)
+
+
+@app.route("/about")
+def about():
+    page_config = {
+        "title": "About",
+        "details": "Browse community music NFTs. Find some inspiration and bid on samples to include in yout project or propose a royalty agreement to the owner.",
+        "content": "Here we describe what we do in details",
+    }
+    return render_template("about.html", site_config=site_config, page_config=page_config)
 
 
 if __name__ == "__main__":

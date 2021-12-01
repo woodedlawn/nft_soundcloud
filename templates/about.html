@@ -1,0 +1,23 @@
+{% with page_title=page_title %} {% include "header.html" %} {% endwith %}
+
+<div class="container">
+  <div class="jumbotron" style="text-align: center">
+    <h1>{{page_config.title}}</h1>
+    <p>{{page_config.details}}</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>{{page_config.title}}</h2>
+      <div>{{page_config.details}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p>{{page_config.content}}</p>
+    </div>
+  </div>
+</div>
+
+{% with page_footer=page_footer %} {% include "footer.html" %} {% endwith %}

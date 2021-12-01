@@ -6,17 +6,39 @@
     <p>{{page_config.details}}</p>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <h2>{{page_config.title}}</h2>
-      <div>{{page_config.details}}</div>
+  <div style="margin: 30px">
+    <h3>SoundChainToken NFTs created by the community:</h3>
+    {%for i in range(0, page_config.len)%}
+    <div class="row" style="margin-top: 30px">
+      <div class="col-md-3">
+        Name: <strong>{{page_config.sounds[i][0]}}</strong>
+      </div>
+      <div class="col-md-3">
+        Instrument: <strong>{{page_config.sounds[i][1]}}</strong>
+      </div>
+      <div class="col-md-3">
+        Genre: <strong>{{page_config.sounds[i][2]}}</strong>
+      </div>
+      <div class="col-md-3">
+        {% set ipfs_url_hash = page_config.sounds[i][3].split('ipfs://').pop()
+        %}
+        <a
+          href="https://cloudflare-ipfs.com/ipfs/{{ipfs_url_hash}}"
+          target="_blank"
+          style="display: block"
+          >View NFT Metadata</a
+        >
+        <a
+          href="https://testnets.opensea.io/assets/{{site_config.smart_contract_address}}/{{i}}"
+          target="_blank"
+          style="display: block"
+          >View NFT on OpenSea</a
+        >
+      </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <p>{{page_config.content}}</p>
-    </div>
+    {% if i != page_config.len - 1 %}
+    <hr />
+    {% endif %} {%endfor%}
   </div>
 </div>
 
