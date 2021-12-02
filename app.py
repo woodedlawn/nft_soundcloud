@@ -192,7 +192,7 @@ def about():
         {
           "name": "Rodrigo Monge",
           "title": "Web3 Specialist",
-          "image": "static/images/blank.webp"
+          "image": "static/images/rm.jpg"
         },
         {
           "name": "James Sherrer",
