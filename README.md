@@ -1,5 +1,15 @@
 # nft_soundcloud (project_3)
 
+# Fight For Your Right
+
+NFT SoundsCloud, and the SounChain Token, are here to protect artists and creators by providing secure creation and custody through the tokenization of copyrightable intellectual property. Via tokenization and subsequent transfer via smartcontracts, creators can establish clear ownership over their IP allowing you to become your own Publisher.
+
+This simple application of technology to ownership helps creators cut out the corporate middle-men of the music industry and increase their own share of royalty revenues whenever their content/IP is licensed, used or reproduced.
+
+Using SoundChain Token, on avg, increases royalty revenue share 5x!
+
+Fight for your rights. Take control of what's yours. Stick it to "The Man"
+
 # Instructions
 
 To run this app locally for development:
@@ -18,6 +28,8 @@ To run this app locally for development:
 [![](https://github.com/woodedlawn.png?size=50)](https://github.com/woodedlawn)
 
 [![](https://github.com/dylanbowsky.png?size=50)](https://github.com/dylanbowsky)
+
+[![](https://github.com/jsherrer391.png?size=50)](https://github.com/jsherrer391)
 
 ---
 
