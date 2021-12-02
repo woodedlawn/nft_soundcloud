@@ -8,7 +8,26 @@
 </div>
 
 <div style="margin: 30px">
-  <div class="row"></div>
+  <h3 style="text-align: center">The Team</h3>
+  <div class="row">
+    {%for i in range(0, page_config.len)%}
+    <div class="col-md-4" style="margin-top: 30px">
+      <div style="text-align: center">
+        <img
+          src="{{page_config.team[i].image}}"
+          style="border-radius: 50%; width: 120px"
+        />
+      </div>
+      <div style="text-align: center">{{page_config.team[i].name}}</div>
+      <div style="text-align: center">{{page_config.team[i].title}}</div>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+
+<div style="margin: 30px">
+  <h3 style="text-align: center">Our Mission</h3>
+  <p style="margin: 30px">{{page_config.mission}}</p>
 </div>
 
 {% with page_footer=page_footer %} {% include "footer.html" %} {% endwith %}

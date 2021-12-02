@@ -173,10 +173,41 @@ def discover():
 
 @app.route("/about")
 def about():
+    team = [
+        {
+          "name": "Jonathan Woolsey",
+          "title": "Full Stack Developer",
+          "image": "static/images/jw.jpeg"
+        },
+        {
+          "name": "Dylan Bowsky",
+          "title": "Blockchain Developer",
+          "image": "static/images/db.jpg"
+        },
+        {
+          "name": "Abiy Mekuria",
+          "title": "CMO",
+          "image": "static/images/am.jpg"
+        },
+        {
+          "name": "Rodrigo Monge",
+          "title": "Web3 Specialist",
+          "image": "static/images/blank.webp"
+        },
+        {
+          "name": "James Sherrer",
+          "title": "CEO",
+          "image": "static/images/js.jpeg"
+        }
+    ]
+
     page_config = {
         "title": "About",
         "details": "Who we are, what we are doing, and why we are doing it...",
         "content": "Here we describe what we do in details",
+        "team": team,
+        "len": len(team),
+        "mission": "Artists and musicians can create NFTs themselves to auction off various forms of digital media to their fans who pay using cryptocurrencies like Bitcoin, Ethereum and others. They could add multiple buyers to the NFT or make it so there is only one owner. The artist can also receive royalties every time a buyer of that digital copy sells it to somebody else. This puts a lot of power back in the hands of artists who now have another way to monetize their art or other forms of digital merchandise. Here we are to introduction NFT SoundCloud to help musicians easily share their original music NFTs and find other artists with simialr interests. "
     }
     return render_template("about.html", site_config=site_config, page_config=page_config)
 
